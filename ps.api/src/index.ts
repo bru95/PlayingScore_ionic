@@ -4,12 +4,17 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
 import {Routes} from "./routes";
-import {User} from "./entity/User";
 import config from "./include/config";
+import * as cors from 'cors';
+import auth from './middleware/auth';
 
 // create express app
 const app = express();
 app.use(bodyParser.json());
+
+//app.use(auth);
+
+app.use(cors());
 
 // register express routes from defined application routes
 Routes.forEach(route => {

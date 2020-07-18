@@ -48,4 +48,8 @@ export abstract class BaseController<GENERIC_CLASS> extends BaseValidation {
         return await this._repository.save(_modelRegister);
     }
 
+    get repository() : Repository<GENERIC_CLASS> {
+        return this._repository;
+    }
+
 }

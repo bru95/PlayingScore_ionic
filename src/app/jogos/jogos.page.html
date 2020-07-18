@@ -22,29 +22,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/img/user.svg">
-      </ion-avatar>
-
-      <ion-label class="ion-text-wrap">
-        <ion-text color="dark">
-          <h3>Guilherme Madalozzo</h3>
-        </ion-text>
-        <p>Truco Paulista</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-card-content>
-      É jogado com o baralho espanhol de 50 cartas, mas as cartas 8 e 9, além dos curingas,
-      são removidas, somando um total de apenas 40 cartas (10 de cada naipe).
-    </ion-card-content>
-
-    <ion-card-content>
-      <ion-button size="small" fill="outline" slot="end">Ver Regras</ion-button>
-    </ion-card-content>
-  </ion-card>
+  <app-jogo-card *ngFor="let game of gamesData" name="{{game.name}}" description="{{game.description}}"></app-jogo-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button size="large"><ion-icon class="ion-icon-fab" name="add"></ion-icon></ion-fab-button>

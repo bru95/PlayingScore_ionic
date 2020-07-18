@@ -1,3 +1,4 @@
+import { JogosService } from './../services/jogos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JogosPage implements OnInit {
 
-  constructor() { }
+  gamesData: any;
+
+  constructor(public apiService: JogosService) { 
+    this.gamesData = [];
+  }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.getAllGames();
+  }
+
+  getAllGames() {
+    this.apiService.getList().subscribe(response => {
+      console.log(response);
+      this.gamesData = response;
+    });
   }
 
 }

@@ -7,3 +7,4 @@ export class Game {
     players_per_team_limit: number;
 
 }
+

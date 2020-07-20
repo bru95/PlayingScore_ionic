@@ -14,3 +14,5 @@ export class JogoCardComponent implements OnInit {
   ngOnInit() {}
 
 }
+
+

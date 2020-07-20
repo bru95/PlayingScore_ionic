@@ -1,30 +1,30 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="ion-text-center" color="primary">
-    <ion-title>Jogos</ion-title>
-  </ion-toolbar>
+    <ion-toolbar class="ion-text-center" color="primary">
+        <ion-title>Jogos</ion-title>
+    </ion-toolbar>
 
-  <ion-toolbar class="tab-bar-sub" color="light">
-    <ion-tabs>
-      <ion-tab-bar class="tab-bar-sub" color="light" slot="top">
-        <ion-tab-button layout="icon-start" tab="tabJogosFavoritos">
-          <ion-icon name="star"></ion-icon>
-          <ion-label>Meus Favoritos</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button layout="icon-start" tab="tabJogosAmigos">
-          <ion-icon name="people"></ion-icon>
-          <ion-label>Jogos de Amigos</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
-  </ion-toolbar>
-
+	<ion-toolbar class="tab-bar-sub" color="light" >
+		<ion-tabs>
+            <ion-tab-bar class="tab-bar-sub" color="light" slot="top">
+                <ion-tab-button layout="icon-start" tab="tabJogosFavoritos">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-label>Meus Favoritos</ion-label>
+                </ion-tab-button>
+        
+                <ion-tab-button layout="icon-start" tab="tabJogosAmigos">
+                    <ion-icon name="people"></ion-icon>
+                    <ion-label>Jogos de Amigos</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <app-jogo-card *ngFor="let game of gamesData" name="{{game.name}}" description="{{game.description}}"></app-jogo-card>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button size="large"><ion-icon class="ion-icon-fab" name="add"></ion-icon></ion-fab-button>
-  </ion-fab>
+<ion-content>
+    <app-jogo-card *ngFor="let game of gamesData" name="{{ game.name }}" description="{{ game.description }}"></app-jogo-card>
+
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button size="large"><ion-icon name="add"></ion-icon></ion-fab-button>
+    </ion-fab>
 </ion-content>

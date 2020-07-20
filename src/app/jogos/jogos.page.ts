@@ -7,25 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jogos.page.scss'],
 })
 export class JogosPage implements OnInit {
+  
+	gamesData: any;
 
-  gamesData: any;
+	constructor(public apiService: JogosService) { 
+		this.gamesData = [];
+	}
 
-  constructor(public apiService: JogosService) { 
-    this.gamesData = [];
-  }
+	ngOnInit() { }
 
-  ngOnInit() {
-  }
+	ionViewWillEnter() {
+		// Used ionViewWillEnter as ngOnInit is not 
+		// called due to view persistence in Ionic
+		this.getAllGames();
+	}
 
-  ionViewWillEnter() {
-    this.getAllGames();
-  }
-
-  getAllGames() {
-    this.apiService.getList().subscribe(response => {
-      console.log(response);
-      this.gamesData = response;
-    });
-  }
-
+	getAllGames() {
+		//Get saved list of students
+		this.apiService.getList().subscribe(response => {
+			console.log(response);
+			this.gamesData = response;
+		})
+	}
 }
+

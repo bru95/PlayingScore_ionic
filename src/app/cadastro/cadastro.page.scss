@@ -1,0 +1,27 @@
+ion-content {
+    --background: url(../../assets/img/FundoLogin.png) no-repeat center/cover fixed;
+    
+}
+
+.card {
+    border-radius: 10%;
+
+    .header {
+        height: 315px;
+    }
+
+    .body {
+        background-color: white;
+        padding: 30px;
+        height: 420px !important; //calc(100vh - (200px + 56px));
+        border-top-left-radius: 10%;
+        border-top-right-radius: 10%;
+        .btn {
+            height: 50px;
+        }
+    }
+}
+
+ion-item {
+    padding-right: 20px !important;
+}

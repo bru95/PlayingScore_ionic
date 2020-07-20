@@ -10,13 +10,15 @@ import { JogosPage } from './jogos.page';
 import { JogoCardComponentModule } from './../components/jogo-card/jogo-card.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    JogosPageRoutingModule,
-    JogoCardComponentModule
-  ],
-  declarations: [JogosPage]
+	imports: [
+		CommonModule,
+		FormsModule,
+		IonicModule,
+		JogosPageRoutingModule,
+		JogoCardComponentModule,
+	],
+	declarations: [
+		JogosPage
+	]
 })
 export class JogosPageModule {}

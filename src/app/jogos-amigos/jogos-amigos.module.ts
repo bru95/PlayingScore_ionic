@@ -15,6 +15,8 @@ import { JogosAmigosPage } from './jogos-amigos.page';
     IonicModule,
     JogosAmigosPageRoutingModule
   ],
-  declarations: [JogosAmigosPage]
+  declarations: [
+    JogosAmigosPage
+  ]
 })
 export class JogosAmigosPageModule {}

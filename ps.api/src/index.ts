@@ -1,19 +1,20 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
+import * as cors from 'cors';
 import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
 import {Routes} from "./routes";
 import config from "./include/config";
-import * as cors from 'cors';
 import auth from './middleware/auth';
 
 // create express app
 const app = express();
 app.use(bodyParser.json());
 
-//app.use(auth);
+// app.use(auth);
 
+// Cors
 app.use(cors());
 
 // register express routes from defined application routes
@@ -30,10 +31,12 @@ Routes.forEach(route => {
 });
 
 app.listen(config.port, '0.0.0.0', async () => {
+    console.log(`Playing Score API started in port ${config.port}`);
     try {
         await createConnection();
-        console.log('Banco de dados conectado');
-    } catch(error) {
-        console.log(`Error to connect to database: ${error}`)
+        console.log('Connected to Database');
+    } catch (error) {
+        console.error(`Error to connect to database: ${error}`);
     }
 });
+

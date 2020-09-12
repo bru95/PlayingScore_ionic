@@ -25,6 +25,7 @@ export class JogosPage implements OnInit {
 	getAllGames() {
 		//Get saved list of students
 		this.apiService.getList().subscribe(response => {
+			console.log("oi");
 			console.log(response);
 			this.gamesData = response;
 		})
